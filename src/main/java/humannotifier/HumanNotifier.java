@@ -8,7 +8,7 @@ import ch.loewenfels.raspberrybuildnotifier.BuildInformationDto;
 public abstract class HumanNotifier implements Observer {
 
 	@Override
-	public void update(Observable o, Object arg) {
+	public final void update(Observable o, Object arg) {
 		BuildInformationDto dto = (BuildInformationDto) arg;
 		notifyHumanBeing(dto);
 	}

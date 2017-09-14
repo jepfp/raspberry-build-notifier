@@ -11,7 +11,7 @@ public class DummyPoller extends Poller {
 	protected BuildInformationDto pollLatestBuildState() {
 		BuildInformationDto buildInformationDto = new BuildInformationDto();
 		buildInformationDto.jobname = "Dummy-Job";
-		buildInformationDto.jobStatus = JobStatus.SUCCESS;
+		buildInformationDto.jobStatus = JobStatus.FAILURE;
 		buildInformationDto.resultDateTime = LocalDateTime.now();
 		return buildInformationDto;
 	}
