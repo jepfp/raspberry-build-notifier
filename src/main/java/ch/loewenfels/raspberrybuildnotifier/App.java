@@ -8,7 +8,7 @@ import org.apache.commons.daemon.Daemon;
 import org.apache.commons.daemon.DaemonContext;
 import org.apache.commons.daemon.DaemonInitException;
 
-import ch.loewenfels.raspberrybuildnotifier.serverpoller.DummyPoller;
+import ch.loewenfels.raspberrybuildnotifier.serverpoller.GoogleAppEnginePoller;
 import ch.loewenfels.raspberrybuildnotifier.serverpoller.Poller;
 import humannotifier.AudioNotifier;
 import humannotifier.ConsoleNotifier;
@@ -17,7 +17,7 @@ class EchoTask extends TimerTask {
 	private Poller poller;
 
 	public EchoTask() {
-		poller = new DummyPoller();
+		poller = new GoogleAppEnginePoller();
         poller.addObserver(new ConsoleNotifier());
         poller.addObserver(new AudioNotifier());
         System.out.println("Amount of observers: " + poller.countObservers());

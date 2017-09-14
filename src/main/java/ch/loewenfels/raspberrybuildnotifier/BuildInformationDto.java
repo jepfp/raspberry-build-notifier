@@ -7,13 +7,26 @@ public class BuildInformationDto {
 		SUCCESS, FAILURE
 	}
 
-	public String jobname;
+	public String name;
 	public JobStatus jobStatus;
 	public LocalDateTime resultDateTime;
-	
+
+	public BuildInformationDto(String name, JobStatus jobStatus, LocalDateTime resultDateTime) {
+		this.name = name;
+		this.jobStatus = jobStatus;
+		this.resultDateTime = resultDateTime;
+	}
+
+	public BuildInformationDto(String name, String jobStatus, LocalDateTime resultDateTime) {
+		this(name, JobStatus.valueOf(jobStatus), resultDateTime);
+	}
+
+	public BuildInformationDto() {
+	}
+
 	@Override
 	public String toString() {
-		return "[jobname: " + jobname + " jobStatus: " + jobStatus + " resultDateTime: " + resultDateTime + " ]";
+		return "[jobname: " + name + " jobStatus: " + jobStatus + " resultDateTime: " + resultDateTime + " ]";
 	}
 
 }
