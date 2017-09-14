@@ -21,7 +21,7 @@ public class JsonParser {
 	public BuildInformationDto get() {
 		try {
 			//String url = "http://maximal-helper-179916.appspot.com/a/build/put/get";
-			String url = "http://localhost:800/server.json";
+			String url = "http://192.168.43.23:800/server.json";
 			HttpClient client = HttpClientBuilder.create().build();
 			HttpGet request = new HttpGet(url);
 			request.addHeader("User-Agent", USER_AGENT);
