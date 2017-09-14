@@ -3,12 +3,28 @@ package ch.loewenfels.raspberrybuildnotifier;
 import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
-import org.apache.commons.daemon.*;
+
+import org.apache.commons.daemon.Daemon;
+import org.apache.commons.daemon.DaemonContext;
+import org.apache.commons.daemon.DaemonInitException;
+
+import ch.loewenfels.raspberrybuildnotifier.serverpoller.DummyPoller;
+import ch.loewenfels.raspberrybuildnotifier.serverpoller.Poller;
+import humannotifier.ConsoleNotifier;
 
 class EchoTask extends TimerTask {
+	private Poller poller;
+
+	public EchoTask() {
+		poller = new DummyPoller();
+        poller.addObserver(new ConsoleNotifier());
+        System.out.println("Amount of observers: " + poller.countObservers());
+	}
+	
     @Override
     public void run() {
         System.out.println(new Date() + " running ...");
+        poller.pollAndNotify();
     }
 }
 
