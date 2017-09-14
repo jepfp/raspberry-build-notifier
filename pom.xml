@@ -21,5 +21,11 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/commons-daemon/commons-daemon -->
+	<dependency>
+	    <groupId>commons-daemon</groupId>
+	    <artifactId>commons-daemon</artifactId>
+	    <version>1.0.15</version>
+	</dependency>
   </dependencies>
 </project>
