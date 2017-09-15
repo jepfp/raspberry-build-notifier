@@ -1,0 +1,6 @@
+http://www.fromtexttospeech.com/
+Ladies and Gentlemen.
+Team Technology would like to inform you, that the current nil-core build is failing. Therefore you are asked to finish your current activities as fast as possible and fix the build.
+This especially includes activities such as playing table soccer, drinking coffee or reading the news.
+Thank you for your cooperation.
+Team Technology.
